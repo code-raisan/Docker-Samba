@@ -16,4 +16,5 @@ services:
       "-S",
       "-w", "PANICBLANKET",
       "-s", "public;/mnt/public;yes;no;yes;all"
+      "-u", "admin;admin"
     ]
