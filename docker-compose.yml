@@ -10,7 +10,7 @@ services:
       - "139:139"
       - "445:445"
     volumes:
-      - "/mnt/data/samba:/mnt/public"
+      - "/home/samba:/mnt/public"
     command: [
       "-r",
       "-S",
