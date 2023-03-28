@@ -2,19 +2,15 @@ version: "3"
 services:
   samba:
     image: dperson/samba
-    container_name: samba
+    container_name: "SambaServer"
     restart: always
     ports:
-      - "137:137"
-      - "138:138"
       - "139:139"
       - "445:445"
     volumes:
-      - "/home/samba:/mnt/public"
+      - "/home/nas:/mnt/share"
     command: [
-      "-r",
-      "-S",
-      "-w", "PANICBLANKET",
-      "-s", "public;/mnt/public;yes;no;yes;all"
+      "-r", "-p",
+      "-s", "share;/mnt/public;yes;no;yes;all",
       "-u", "admin;admin"
     ]
